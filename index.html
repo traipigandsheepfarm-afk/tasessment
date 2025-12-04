@@ -50,10 +50,6 @@
 
         .section {
             margin-bottom: 40px;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            padding: 20px;
-            background: #f9f9f9;
         }
 
         .section-title {
@@ -64,20 +60,6 @@
             margin-bottom: 20px;
             font-size: 18px;
             font-weight: bold;
-        }
-
-        .assessor-info {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        .assessor-info h3 {
-            color: #856404;
-            margin-bottom: 10px;
-            font-size: 16px;
         }
 
         .subsection-title {
@@ -123,12 +105,11 @@
         }
 
         .question-item {
-            background: white;
+            background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 15px;
             border-left: 4px solid #667eea;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .question-title {
@@ -147,7 +128,7 @@
             display: flex;
             align-items: center;
             padding: 10px;
-            background: #f8f9fa;
+            background: white;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
@@ -271,20 +252,6 @@
             margin: 20px 0;
         }
 
-        .info-banner {
-            background: #d1ecf1;
-            border: 2px solid #bee5eb;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            color: #0c5460;
-        }
-
-        .info-banner strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
         @media (max-width: 768px) {
             .container {
                 border-radius: 0;
@@ -304,7 +271,7 @@
     <div class="container">
         <div class="header">
             <h1>📋 แบบประเมินครัวเรือนด้านสิ่งแวดล้อมที่เอื้อต่อสุขภาพ</h1>
-            <p>แบบสเกล 5 ระดับ (แยกผู้ประเมินตามหมวด)</p>
+            <p>แบบสเกล 5 ระดับ</p>
         </div>
 
         <div class="form-content">
@@ -314,16 +281,10 @@
                 <p style="margin-top: 10px;">กำลังบันทึกข้อมูล...</p>
             </div>
 
-            <div class="info-banner">
-                <strong>📌 หมายเหตุสำคัญ:</strong>
-                แบบประเมินนี้แบ่งเป็น 3 หมวด โดยแต่ละหมวดสามารถมีผู้ประเมินคนละคนได้ 
-                กรุณากรอกชื่อผู้ประเมินและวันที่ประเมินในแต่ละหมวด
-            </div>
-
             <form id="assessmentForm">
                 <!-- ข้อมูลพื้นฐาน -->
                 <div class="section">
-                    <div class="section-title">ข้อมูลพื้นฐานครัวเรือน</div>
+                    <div class="section-title">ข้อมูลพื้นฐาน</div>
                     
                     <div class="form-row">
                         <div class="form-group">
@@ -357,25 +318,22 @@
                             <input type="number" name="elderly" min="0" required>
                         </div>
                     </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>ผู้ประเมิน *</label>
+                            <input type="text" name="assessor" required>
+                        </div>
+                        <div class="form-group">
+                            <label>วันที่ประเมิน *</label>
+                            <input type="date" name="assessmentDate" required>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- ส่วนที่ 1 -->
                 <div class="section">
-                    <div class="section-title">หมวดที่ 1: สิ่งแวดล้อมที่เอื้อต่อการป้องกันโรคไข้เลือดออก (40 คะแนน)</div>
-                    
-                    <div class="assessor-info">
-                        <h3>👤 ข้อมูลผู้ประเมินหมวดที่ 1</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>ชื่อผู้ประเมิน *</label>
-                                <input type="text" name="assessor1" required placeholder="ชื่อผู้ประเมินหมวดที่ 1">
-                            </div>
-                            <div class="form-group">
-                                <label>วันที่ประเมิน *</label>
-                                <input type="date" name="assessmentDate1" required>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="section-title">ส่วนที่ 1: สิ่งแวดล้อมที่เอื้อต่อการป้องกันโรคไข้เลือดออก (40 คะแนน)</div>
                     
                     <div class="subsection-title">1.1 การกำจัดแหล่งเพาะพันธุ์ยุงลาย (15 คะแนน)</div>
                     
@@ -698,21 +656,7 @@
 
                 <!-- ส่วนที่ 2 -->
                 <div class="section">
-                    <div class="section-title">หมวดที่ 2: ความมั่นคงและความปลอดภัยในอาหาร (30 คะแนน)</div>
-                    
-                    <div class="assessor-info">
-                        <h3>👤 ข้อมูลผู้ประเมินหมวดที่ 2</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>ชื่อผู้ประเมิน *</label>
-                                <input type="text" name="assessor2" required placeholder="ชื่อผู้ประเมินหมวดที่ 2">
-                            </div>
-                            <div class="form-group">
-                                <label>วันที่ประเมิน *</label>
-                                <input type="date" name="assessmentDate2" required>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="section-title">ส่วนที่ 2: ความมั่นคงและความปลอดภัยในอาหาร (30 คะแนน)</div>
                     
                     <div class="subsection-title">2.1 การผลิตอาหารที่ปลอดภัย (10 คะแนน)</div>
 
@@ -917,22 +861,7 @@
 
                 <!-- ส่วนที่ 3 -->
                 <div class="section">
-                    <div class="section-title">หมวดที่ 3: ห้องน้ำเหมาะสมสำหรับผู้สูงอายุ (30 คะแนน)</div>
-                    
-                    <div class="assessor-info">
-                        <h3>👤 ข้อมูลผู้ประเมินหมวดที่ 3</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>ชื่อผู้ประเมิน *</label>
-                                <input type="text" name="assessor3" required placeholder="ชื่อผู้ประเมินหมวดที่ 3">
-                            </div>
-                            <div class="form-group">
-                                <label>วันที่ประเมิน *</label>
-                                <input type="date" name="assessmentDate3" required>
-                            </div>
-                        </div>
-                    </div>
-
+                    <div class="section-title">ส่วนที่ 3: ห้องน้ำเหมาะสมสำหรับผู้สูงอายุ (30 คะแนน)</div>
                     <p style="color: #666; margin-bottom: 20px; font-style: italic;">
                         * หากไม่มีผู้สูงอายุ ระบบจะให้คะแนนเต็ม 30 คะแนนโดยอัตโนมัติ
                     </p>
@@ -1047,7 +976,7 @@
                         <div class="question-title">24. มีแสงสว่างเพียงพอ</div>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="q24" value="5" required>
+                                <input type="radio" name="q23" value="5" required>
                                 5 - สว่างเพียงพอ
                             </label>
                             <label class="radio-option">
@@ -1236,15 +1165,15 @@
                     
                     <div class="score-summary" id="scoreSummary" style="display: none;">
                         <div class="score-card">
-                            <h3>หมวดที่ 1</h3>
+                            <h3>ส่วนที่ 1</h3>
                             <div class="score" id="score1">0/40</div>
                         </div>
                         <div class="score-card">
-                            <h3>หมวดที่ 2</h3>
+                            <h3>ส่วนที่ 2</h3>
                             <div class="score" id="score2">0/30</div>
                         </div>
                         <div class="score-card">
-                            <h3>หมวดที่ 3</h3>
+                            <h3>ส่วนที่ 3</h3>
                             <div class="score" id="score3">0/30</div>
                         </div>
                     </div>
@@ -1282,31 +1211,28 @@
     </div>
 
     <script>
-        // ตั้งค่าวันที่เป็นวันปัจจุบันสำหรับทุก input date
-        const today = new Date().toISOString().split('T')[0];
-        document.querySelector('input[name="assessmentDate1"]').value = today;
-        document.querySelector('input[name="assessmentDate2"]').value = today;
-        document.querySelector('input[name="assessmentDate3"]').value = today;
+        // ตั้งค่าวันที่เป็นวันปัจจุบัน
+        document.querySelector('input[name="assessmentDate"]').valueAsDate = new Date();
 
         // คำนวณคะแนน
         function calculateScores() {
             const elderly = parseInt(document.querySelector('input[name="elderly"]').value) || 0;
             
-            // หมวดที่ 1 (40 คะแนน)
+            // ส่วนที่ 1 (40 คะแนน)
             let score1 = 0;
             for (let i = 1; i <= 12; i++) {
                 const selected = document.querySelector(`input[name="q${i}"]:checked`);
                 if (selected) score1 += parseInt(selected.value);
             }
 
-            // หมวดที่ 2 (30 คะแนน)
+            // ส่วนที่ 2 (30 คะแนน)
             let score2 = 0;
             for (let i = 13; i <= 19; i++) {
                 const selected = document.querySelector(`input[name="q${i}"]:checked`);
                 if (selected) score2 += parseInt(selected.value);
             }
 
-            // หมวดที่ 3 (30 คะแนน) - ถ้าไม่มีผู้สูงอายุให้คะแนนเต็ม
+            // ส่วนที่ 3 (30 คะแนน) - ถ้าไม่มีผู้สูงอายุให้คะแนนเต็ม
             let score3 = 0;
             if (elderly === 0) {
                 score3 = 30;
@@ -1386,7 +1312,7 @@
             }
 
             if (!allFilled) {
-                showAlert('กรุณากรอกข้อมูลให้ครบทุกข้อ (รวมชื่อผู้ประเมินและวันที่ทั้ง 3 หมวด)', 'error');
+                showAlert('กรุณากรอกข้อมูลให้ครบทุกข้อ', 'error');
                 return;
             }
 
@@ -1403,12 +1329,8 @@
                 village: formData.get('village'),
                 members: formData.get('members'),
                 elderly: formData.get('elderly'),
-                assessor1: formData.get('assessor1'),
-                assessmentDate1: formData.get('assessmentDate1'),
-                assessor2: formData.get('assessor2'),
-                assessmentDate2: formData.get('assessmentDate2'),
-                assessor3: formData.get('assessor3'),
-                assessmentDate3: formData.get('assessmentDate3'),
+                assessor: formData.get('assessor'),
+                assessmentDate: formData.get('assessmentDate'),
                 score1: scores.score1,
                 score2: scores.score2,
                 score3: scores.score3,
@@ -1448,9 +1370,7 @@
                     form.reset();
                     document.getElementById('scoreSummary').style.display = 'none';
                     document.getElementById('totalScoreDisplay').style.display = 'none';
-                    document.querySelector('input[name="assessmentDate1"]').value = today;
-                    document.querySelector('input[name="assessmentDate2"]').value = today;
-                    document.querySelector('input[name="assessmentDate3"]').value = today;
+                    document.querySelector('input[name="assessmentDate"]').valueAsDate = new Date();
                 }, 2000);
 
             } catch (error) {
